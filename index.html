@@ -45,11 +45,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(84, 48, 28, 0.14);
   }
 
   .logo {
     font-family: var(--serif);
-    font-size: 32px;
+    font-size: 34px;
     color: var(--marron);
     text-decoration: none;
     letter-spacing: -0.3px;
@@ -73,7 +74,7 @@
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.85;
     transition: opacity 0.2s, color 0.2s;
   }
 
@@ -83,15 +84,15 @@
   }
 
   .nav-links .nav-cta {
-    background-color: var(--magenta);
+    background-color: var(--marron);
     color: var(--crema);
-    padding: 10px 22px;
+    padding: 11px 22px;
     border-radius: 999px;
     opacity: 1;
   }
 
   .nav-links .nav-cta:hover {
-    background-color: var(--marron);
+    background-color: var(--magenta);
     color: var(--crema);
   }
 
@@ -119,11 +120,11 @@
   h1, h2, h3 {
     font-family: var(--serif);
     font-weight: normal;
-    line-height: 1.06;
+    line-height: 1.05;
   }
 
   h1 {
-    font-size: clamp(48px, 6.2vw, 82px);
+    font-size: clamp(50px, 6.4vw, 84px);
     margin-bottom: 22px;
   }
 
@@ -140,10 +141,10 @@
   p.lead {
     font-size: clamp(18px, 1.5vw, 21px);
     line-height: 1.62;
-    opacity: 0.92;
+    opacity: 0.94;
   }
 
-  /* Botones */
+  /* Botones con alto contraste */
   .btn {
     display: inline-block;
     background-color: var(--magenta);
@@ -188,7 +189,7 @@
 
   /* HERO */
   .hero {
-    padding: 40px 0 96px;
+    padding: 52px 0 96px;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 64px;
@@ -209,25 +210,43 @@
     aspect-ratio: 3 / 4;
     object-fit: cover;
     object-position: 35% top;
-    border-radius: 14px;
+    border-radius: 12px;
     display: block;
     margin-left: auto;
-    box-shadow: 0 22px 54px rgba(84, 48, 28, 0.12);
+    border: 1px solid rgba(84, 48, 28, 0.2);
+    box-shadow: 14px 14px 0px var(--marron);
   }
 
-  /* Fondos de sección */
-  .bg-rosa {
-    background-color: var(--rosa-claro);
-  }
-
+  /* Fondos de sección con carácter */
   .bg-marron {
     background-color: var(--marron);
     color: var(--crema);
   }
 
-  .bg-marron .kicker,
+  .bg-marron .kicker {
+    color: var(--oliva);
+  }
+
   .bg-marron h2 em {
     color: var(--rosa-claro);
+  }
+
+  .bg-oliva {
+    background-color: var(--oliva);
+    color: var(--marron);
+  }
+
+  .bg-oliva .kicker {
+    color: var(--marron);
+    border-bottom: 1.5px solid var(--marron);
+    padding-bottom: 3px;
+  }
+
+  .bg-oliva h2 em {
+    color: var(--marron);
+    text-decoration: underline;
+    text-decoration-color: var(--magenta);
+    text-underline-offset: 6px;
   }
 
   /* Manifiesto / Diagnóstico */
@@ -278,7 +297,7 @@
   /* Recorrido de las 5 semanas */
   .weeks-list {
     margin-top: 40px;
-    border-top: 1px solid rgba(84, 48, 28, 0.15);
+    border-top: 1.5px solid var(--marron);
   }
 
   .week-item {
@@ -286,7 +305,7 @@
     grid-template-columns: 170px 1fr;
     gap: 24px;
     padding: 30px 0;
-    border-bottom: 1px solid rgba(84, 48, 28, 0.15);
+    border-bottom: 1px solid rgba(84, 48, 28, 0.22);
     align-items: baseline;
   }
 
@@ -307,7 +326,81 @@
   .week-content p {
     font-size: 16px;
     max-width: 740px;
-    opacity: 0.9;
+    opacity: 0.92;
+  }
+
+  /* TESTIMONIOS (Grid 2x2 editorial con alto contraste) */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 44px;
+  }
+
+  .testimonial-card {
+    background-color: #FFFFFF;
+    border: 1.5px solid var(--marron);
+    border-radius: 18px;
+    padding: 38px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .testimonial-card.solido-azul {
+    background-color: var(--azul);
+    color: var(--marron);
+    border: 1.5px solid var(--marron);
+  }
+
+  .testimonial-card.solido-marron {
+    background-color: var(--marron);
+    color: var(--crema);
+    border: 1.5px solid var(--marron);
+  }
+
+  .testimonial-card.solido-marron .testimonial-quote-mark {
+    color: var(--oliva);
+  }
+
+  .testimonial-card.solido-marron .testimonial-author {
+    border-top-color: rgba(250, 245, 237, 0.2);
+  }
+
+  .testimonial-card.solido-marron .testimonial-name {
+    color: var(--crema);
+  }
+
+  .testimonial-card.solido-azul .testimonial-quote-mark {
+    color: var(--marron);
+  }
+
+  .testimonial-quote-mark {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 0.8;
+    color: var(--magenta);
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .testimonial-author {
+    padding-top: 18px;
+    border-top: 1px solid rgba(84, 48, 28, 0.18);
+  }
+
+  .testimonial-name {
+    font-family: var(--serif);
+    font-size: 25px;
+    color: var(--marron);
+    display: block;
+    line-height: 1.15;
   }
 
   /* Tarjeta Única del Programa 1:1 */
@@ -316,22 +409,23 @@
     margin: 0 auto;
     background-color: var(--crema);
     color: var(--marron);
-    border-radius: 28px;
+    border-radius: 24px;
     padding: 56px 48px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--oliva);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   }
 
   .program-header {
     text-align: center;
     padding-bottom: 32px;
-    border-bottom: 1px solid rgba(84, 48, 28, 0.14);
+    border-bottom: 1px solid rgba(84, 48, 28, 0.18);
     margin-bottom: 32px;
   }
 
   .program-badge {
     display: inline-block;
-    background-color: var(--oliva);
-    color: var(--marron);
+    background-color: var(--marron);
+    color: var(--oliva);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.8px;
@@ -369,9 +463,10 @@
   }
 
   .price-box {
-    background-color: var(--rosa-claro);
-    border-radius: 20px;
-    padding: 32px 28px;
+    background-color: var(--marron);
+    color: var(--crema);
+    border-radius: 18px;
+    padding: 36px 28px;
     text-align: center;
   }
 
@@ -380,15 +475,15 @@
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-    opacity: 0.78;
+    color: var(--oliva);
     display: block;
     margin-bottom: 8px;
   }
 
   .price-amount {
     font-family: var(--serif);
-    font-size: clamp(48px, 6vw, 66px);
-    color: var(--magenta);
+    font-size: clamp(50px, 6vw, 68px);
+    color: var(--rosa-claro);
     line-height: 1;
     display: block;
     margin-bottom: 10px;
@@ -401,6 +496,11 @@
     margin-bottom: 24px;
   }
 
+  .price-box .btn:hover {
+    background-color: var(--oliva);
+    color: var(--marron);
+  }
+
   /* Proceso paso a paso */
   .process-steps {
     display: grid;
@@ -410,7 +510,7 @@
   }
 
   .step-box {
-    border-top: 2px solid var(--magenta);
+    border-top: 2px solid var(--marron);
     padding-top: 22px;
   }
 
@@ -432,7 +532,7 @@
 
   .step-box p {
     font-size: 15.5px;
-    opacity: 0.88;
+    opacity: 0.9;
   }
 
   /* Sobre Fe */
@@ -445,10 +545,12 @@
 
   .about-grid img {
     width: 100%;
-    border-radius: 14px;
+    border-radius: 12px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center top;
+    border: 1px solid rgba(250, 245, 237, 0.25);
+    box-shadow: 12px 12px 0px var(--oliva);
   }
 
   /* Formulario de postulación */
@@ -456,8 +558,8 @@
     max-width: 720px;
     margin: 0 auto;
     background-color: #FFFFFF;
-    border: 1px solid rgba(84, 48, 28, 0.14);
-    border-radius: 28px;
+    border: 1.5px solid var(--marron);
+    border-radius: 24px;
     padding: 52px 44px;
   }
 
@@ -483,15 +585,15 @@
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
   .form-group input,
   .form-group textarea {
     width: 100%;
     padding: 14px 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(84, 48, 28, 0.22);
+    border-radius: 10px;
+    border: 1.5px solid rgba(84, 48, 28, 0.28);
     background-color: var(--crema);
     color: var(--marron);
     font-family: var(--sans);
@@ -512,7 +614,7 @@
   }
 
   details {
-    border-bottom: 1px solid rgba(84, 48, 28, 0.15);
+    border-bottom: 1px solid rgba(84, 48, 28, 0.22);
     padding: 22px 0;
   }
 
@@ -545,7 +647,7 @@
     margin-top: 14px;
     font-size: 16px;
     line-height: 1.6;
-    opacity: 0.9;
+    opacity: 0.92;
   }
 
   /* FOOTER EDITORIAL MULTICOLUMNA */
@@ -554,6 +656,7 @@
     color: var(--crema);
     padding: 72px 24px 36px;
     margin-top: 40px;
+    border-top: 4px solid var(--magenta);
   }
 
   .footer-inner {
@@ -566,7 +669,7 @@
     grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
     gap: 48px;
     padding-bottom: 52px;
-    border-bottom: 1px solid rgba(250, 245, 237, 0.15);
+    border-bottom: 1px solid rgba(250, 245, 237, 0.18);
   }
 
   .footer-logo {
@@ -579,14 +682,14 @@
   }
 
   .footer-logo em {
-    color: var(--rosa-claro);
+    color: var(--oliva);
     font-style: italic;
   }
 
   .footer-tagline {
     font-size: 15px;
     line-height: 1.6;
-    opacity: 0.82;
+    opacity: 0.85;
     max-width: 310px;
     margin-bottom: 20px;
   }
@@ -601,8 +704,8 @@
     display: inline-block;
     padding: 7px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 228, 247, 0.35);
-    color: var(--rosa-claro);
+    border: 1px solid rgba(250, 245, 237, 0.4);
+    color: var(--crema);
     text-decoration: none;
     font-size: 12px;
     font-weight: 700;
@@ -612,7 +715,8 @@
   }
 
   .footer-socials a:hover {
-    background-color: var(--rosa-claro);
+    background-color: var(--oliva);
+    border-color: var(--oliva);
     color: var(--marron);
   }
 
@@ -620,7 +724,7 @@
     font-family: var(--serif);
     font-weight: normal;
     font-size: 24px;
-    color: var(--rosa-claro);
+    color: var(--oliva);
     margin-bottom: 18px;
   }
 
@@ -635,7 +739,7 @@
     color: var(--crema);
     text-decoration: none;
     font-size: 14.5px;
-    opacity: 0.8;
+    opacity: 0.84;
     transition: opacity 0.2s, color 0.2s;
   }
 
@@ -647,7 +751,7 @@
   .footer-contact-text {
     font-size: 14.5px;
     line-height: 1.6;
-    opacity: 0.82;
+    opacity: 0.85;
     margin-bottom: 16px;
   }
 
@@ -666,7 +770,7 @@
   }
 
   .footer-wa-link:hover {
-    background-color: var(--rosa-claro);
+    background-color: var(--oliva);
     color: var(--marron);
   }
 
@@ -678,14 +782,14 @@
     flex-wrap: wrap;
     gap: 16px;
     font-size: 13px;
-    opacity: 0.68;
+    opacity: 0.72;
   }
 
   @media (max-width: 860px) {
     .nav-links a:not(.nav-cta) {
       display: none;
     }
-    .hero, .two-cols, .process-steps, .about-grid {
+    .hero, .two-cols, .testimonials-grid, .process-steps, .about-grid {
       grid-template-columns: 1fr;
       gap: 36px;
     }
@@ -723,6 +827,7 @@
     <a href="#" class="logo">Fe <em>Lacuadra</em></a>
     <nav class="nav-links">
       <a href="#recorrido">Recorrido</a>
+      <a href="#testimonios">Testimonios</a>
       <a href="#programa">El programa</a>
       <a href="#sobre-mi">Sobre mí</a>
       <a href="https://wa.me/59891928528?text=Hola%20Fe!%20Me%20interesa%20la%20consultor%C3%ADa%201%3A1%20de%205%20semanas." target="_blank" rel="noopener" class="nav-cta">Escribir por WhatsApp</a>
@@ -750,7 +855,7 @@
   </div>
 
   <!-- EL CONCEPTO / MANIFIESTO -->
-  <section class="bg-rosa">
+  <section class="bg-marron">
     <div class="container">
       <div class="manifesto-box">
         <span class="kicker">Arquitectura de marca profunda</span>
@@ -836,14 +941,78 @@
     </div>
   </section>
 
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" style="padding-top: 10px;">
+    <div class="container">
+      <div style="max-width: 680px;">
+        <span class="kicker">Procesos compartidos</span>
+        <h2>Lo que dicen quienes ya trabajaron su marca <em>conmigo</em></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- TESTIMONIO 1 -->
+        <article class="testimonial-card">
+          <div>
+            <span class="testimonial-quote-mark">“</span>
+            <p class="testimonial-text">
+              Ya no siento estrés y ansiedad al crear contenido, ni tampoco necesidad de subir de forma diaria sin sentido… los días que estuve desaparecida me agendaron clases.[cite: 2]
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Alejandra Araujo desde Panamá </span>
+          </div>
+        </article>
+
+        <!-- TESTIMONIO 2 -->
+        <article class="testimonial-card solido-azul">
+          <div>
+            <span class="testimonial-quote-mark">“</span>
+            <p class="testimonial-text">
+              Gracias por acompañarme en uno de los procesos más bonitos de mi vida. Ha sido liberador, con muchos “ahá moments”, y sanador. Cada sesión ha sido preciosa, y tu delicadeza y profesionalidad ha sido una caricia para mi alma emprendedora. Gracias por la paciencia, el sostén y la comprensión tan sutil que tienes. Te mando un abrazo grande desde España, ¡esto es sólo el comienzo![cite: 3]
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Bárbara Gutierrez Rodriguez desde España </span>
+          </div>
+        </article>
+
+        <!-- TESTIMONIO 3 -->
+        <article class="testimonial-card solido-marron">
+          <div>
+            <span class="testimonial-quote-mark">“</span>
+            <p class="testimonial-text">
+              ¡Ay, Ferni! Te escribo rapidito para decirte que estoy súper feliz de haber renovado para esta nueva etapa juntas. Es que de verdad ¡el cambio fue brutal! Pasé de no saber cómo vender mi propuesta a agotar todos los cupos en el primer lanzamiento que armamos. La gente me escribe diciendo lo increíble que se ve todo. Tener tu guía para lo que se viene me da una paz gigante. ¡Súper lista para seguir rompiéndola juntas! Un abrazo enorme.[cite: 4]
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Pilar García desde Argentina </span>[cite: 4]
+          </div>
+        </article>
+
+        <!-- TESTIMONIO 4 -->
+        <article class="testimonial-card">
+          <div>
+            <span class="testimonial-quote-mark">“</span>
+            <p class="testimonial-text">
+              Qué valioso es habitar espacios que te recuerdan que eso que sueñas, eso que deseas y visualizas para tu vida, realmente es posible para ti. Agradecida por acompañarme hace más de 2 años en espacios que no solo impulsan tu negocio, sino que también nutren el alma, la espiritualidad y la creatividad. Gracias por ser fiel a tu esencia, por compartir tu arte y por ayudarme a encontrar mi propia voz, mis talentos y mi manera de liderar desde la conciencia, la autenticidad y el corazón.[cite: 5]
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Valentina Vásquez desde Chile </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- EL PROGRAMA ÚNICO + INVERSIÓN -->
-  <section id="programa" class="bg-marron">
+  <section id="programa" class="bg-oliva">
     <div class="container">
       <div class="program-wrapper">
         <div class="program-header">
           <span class="program-badge">Cupos limitados por mes · Modalidad 1:1</span>
           <h2>Consultoría Integral de Marca · <em>5 Semanas</em></h2>
-          <p style="font-size: 17px; max-width: 580px; margin: 0 auto; opacity: 0.88;">
+          <p style="font-size: 17px; max-width: 580px; margin: 0 auto; opacity: 0.9;">
             Un proceso mano a mano para ordenar, profundizar y activar tu marca personal en todos sus puntos de contacto.
           </p>
         </div>
@@ -895,7 +1064,7 @@
   </section>
 
   <!-- SOBRE FE -->
-  <section id="sobre-mi" class="bg-rosa">
+  <section id="sobre-mi" class="bg-marron">
     <div class="container">
       <div class="about-grid">
         <img src="foto-sobre-mi.jpg" alt="Fe Lacuadra">
@@ -993,6 +1162,7 @@
           <h4>Navegación</h4>
           <ul>
             <li><a href="#recorrido">Recorrido de 5 semanas</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#programa">Qué incluye el programa</a></li>
             <li><a href="#sobre-mi">Sobre Fe</a></li>
             <li><a href="#postular">Postular 1:1</a></li>
